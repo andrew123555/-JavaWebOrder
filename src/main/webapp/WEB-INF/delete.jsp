@@ -4,14 +4,13 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>訂單結果</title>
+	<title>刪除結果</title>
 	</head>
 	<body style="padding:  20ppx">
 		<div>
 			<fieldset>
-			<legend>訂單結果</legend>
+			<legend>刪除結果</legend>
 			${orderDTO.message }
-			
 			
 			</fieldset>
 			<button><a href="/JavaWebOrder/index.jsp">回首頁</a></button>

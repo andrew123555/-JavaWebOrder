@@ -11,35 +11,19 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.dto.OrderDTO;
 import service.OrderService;
 
-
-
-
-
-@WebServlet("/order")
-public class OrderServlet extends HttpServlet{
+@WebServlet("/order/delete")
+public class DeleteServlet extends HttpServlet{
 
 	OrderService orderService = new OrderService();
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
-		String item = req.getParameter("item");
-		OrderDTO orderDTO = orderService.addOrder(item);
-		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/result.jsp");
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String index = req.getParameter("index");
+		OrderDTO orderDTO = orderService.removeOrder(index);
+		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/delete.jsp");
 		req.setAttribute("orderDTO", orderDTO);
 		rd.forward(req, resp);
-		
 	}
 
 	
-		
-		
-	}
-
-	
-		
-
-
-	
-
-		
-
+}
